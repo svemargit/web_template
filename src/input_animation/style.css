@@ -1,0 +1,47 @@
+/* input animation */
+.input-group {
+    position: relative;
+}
+
+.input-group_input {
+    font: inherit;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    outline: 2px solid sienna;
+    background-color: transparent;
+    transition: outline-color 500ms, cursor 500ms; /* Added cursor transition */
+    cursor: text; /* Set default cursor style */
+}
+
+.input-group_input:focus,
+.input-group_input:valid {
+    outline-color: #005cbf;
+}
+
+.input-group_input:hover {
+    cursor: text; /* Change cursor style on hover */
+}
+
+.input-group_label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(10px, 10px);
+    color: gray;
+    transition: transform 500ms, background-color 500ms, cursor 500ms;
+    cursor: pointer;
+}
+
+.input-group_label:hover {
+    cursor: text; /* Change cursor style on hover */
+}
+
+.input-group_input:focus + .input-group_label,
+.input-group_input:valid + .input-group_label {
+    padding-left: 5px;
+    transform: translate(10px, -8px) scale(0.8);
+    color: black;
+    background-color: white;
+}
