@@ -28,8 +28,13 @@ body {
 .display {
     background: var(--background);
     width: 13em;
+    position: fixed;
+    z-index: 10;
 }
-
+.bounced {
+    position: relative;
+    left: 3em;
+}
 .navigation {
     position: fixed;
     top: 0;
@@ -48,7 +53,7 @@ body {
 }
 
 .navigation ul {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;

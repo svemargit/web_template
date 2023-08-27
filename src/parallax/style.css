@@ -8,7 +8,7 @@
 }
 
 :root {
-    --DeepSkyBlue: #00bfff; 
+    --DeepSkyBlue: #00bfff;
     --BackgroundButton: #2f2f2f;
     --white: #fff;
     --scubSec: #000;
@@ -22,13 +22,7 @@ body {
 header {
     position: absolute;
     width: 100%;
-    top: 0;
-    left: 0;
-    padding: 20px 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
+    z-index: 1;
 }
 
 .brand {
@@ -71,44 +65,52 @@ header {
     overflow: hidden;
 }
 
-                #introOne {
-                    position: absolute;
-                    font-size: 5rem;
-                    color: var(--white);
-                    z-index: 1000;
-                    top: 280px;
-                    left: 800px;
-                } 
+#introOne {
+    position: absolute;
+    font-size: 5rem;
+    color: var(--white);
+    z-index: 2;
+    top: 200px;
+    left: 800px;
+    white-space: nowrap;
+    overflow: hidden;
+}
 
-                #introTwo {
-                    position: absolute;
-                    font-size: 5rem;
-                    color: var(--white);
-                    z-index: 1000;
-                    top: 360px;
-                    left: 700px;
-                } 
 
-                .parallax img {
-                    position: absolute;
-                    top: -50px;
-                    left: 0;
-                    width: 100%;
-                    pointer-events: none;
-                }
+#introTwo {
+    position: absolute;
+    font-size: 5rem;
+    color: var(--white);
+    z-index: 3;
+    top: 280px;
+    left: 700px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.parallax img {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
 
 #coralReef {
-    z-index: 10000;
+    z-index: 3;
 }
 
 #coral {
-    z-index: 11000;
+    z-index: 5;
     left: 209px;
 }
 
-.scuba {
-    background-color: var(--scubSec);
+#divers {
+    z-index: 4;
+    top: 1em;
+    right: 209px;
 }
+
 
 .scuba h2 {
     padding: 80px 20px 0 60px;
