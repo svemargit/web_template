@@ -17,5 +17,12 @@ for (let i = 0; i < list.length; i++) {
     }
 }
 
-const listItems = document.querySelectorAll('.list');
-const contentSections = document.querySelectorAll('.content');
+function showContent(contentId) {
+    const allContent = document.querySelectorAll('.content');
+    allContent.forEach(content => {
+        content.classList.remove('active');
+    });
+
+    const selectedContent = document.getElementById(`${contentId}-content`);
+    selectedContent.classList.add('active');
+}

@@ -1,15 +1,20 @@
-/* input animation */
+:root {
+    --background: #faf0e6;
+    --menu-background: #9d6037;
+    --white: #faf0e6;
+    --active: #a2a4a0;
+    --close: #FF0000;
+    --black: #36454F;
+}
+
 .input-group {
     position: relative;
 }
 
 .input-group_input {
     font: inherit;
-    color: white;
-    padding: 10px;
+    color: var(--black);
     border: none;
-    border-radius: 4px;
-    outline: 2px solid sienna;
     background-color: transparent;
     transition: outline-color 500ms, cursor 500ms; /* Added cursor transition */
     cursor: text; /* Set default cursor style */
@@ -17,7 +22,7 @@
 
 .input-group_input:focus,
 .input-group_input:valid {
-    outline-color: #005cbf;
+    outline-color: var(--active);;
 }
 
 .input-group_input:hover {
@@ -29,19 +34,24 @@
     top: 0;
     left: 0;
     transform: translate(10px, 10px);
-    color: gray;
+    color: var(--black);
     transition: transform 500ms, background-color 500ms, cursor 500ms;
     cursor: pointer;
 }
 
 .input-group_label:hover {
-    cursor: text; /* Change cursor style on hover */
+    cursor: text;
 }
 
 .input-group_input:focus + .input-group_label,
 .input-group_input:valid + .input-group_label {
     padding-left: 5px;
     transform: translate(10px, -8px) scale(0.8);
-    color: black;
-    background-color: white;
+    color: var(--active);
+    background: linear-gradient(to bottom, var(--white) 1%, transparent 99%);
+    z-index: 5;
+}
+
+.input-group .form-control {
+    border-radius: 0;
 }
