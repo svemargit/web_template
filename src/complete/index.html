@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Complete setup</title>
     <link rel="stylesheet" href="css/home_menu.css">
+    <link rel="stylesheet" href="css/input_animation.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 </head>
@@ -33,28 +35,37 @@
         <span name="close-circle-outline" class="close bi bi-x"></span>
     </div>
 </div>
-<div class="container m-4">
-    <div id="home-content" class="content active">
+<section class="container m-4 content active" id="home-content">
+    <div>
         <h1>Home Content</h1>
     </div>
+</section>
 
-    <div id="form-content" class="content">
-        <h1>Form Content</h1>
-        <p>todo</p>
+
+<section class="container m-4 content" id="form-content">
+    <div class="row">
+        <div class="col-lg-3">
+            <h1>Form Content</h1>
+            <form>
+                <div class="input-group mb-4">
+                    <input type="text" id="name" class="input-group_input form-control" required>
+                    <label for="name" class="input-group_label form-label">Jméno</label>
+                </div>
+                <div class="input-group mb-4">
+                    <input type="number" id="age" class="input-group_input form-control" required>
+                    <label for="age" class="input-group_label form-label">Věk</label>
+                </div>
+                <div class="input-group mb-4">
+                    <input type="email" id="email" class="input-group_input form-control" required>
+                    <label for="email" class="input-group_label form-label">Email</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
     </div>
+</section>
 
-</div>
 <script src="js/home_menu.js"></script>
-<script>
-    function showContent(contentId) {
-        const allContent = document.querySelectorAll('.content');
-        allContent.forEach(content => {
-            content.classList.remove('active');
-        });
-
-        const selectedContent = document.getElementById(`${contentId}-content`);
-        selectedContent.classList.add('active');
-    }
-</script>
+<script src="js/input_animation.js"></script>
 </body>
 </html>

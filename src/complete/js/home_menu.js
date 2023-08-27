@@ -16,3 +16,13 @@ for (let i = 0; i < list.length; i++) {
         list[i].className = 'list active';
     }
 }
+
+function showContent(contentId) {
+    const allContent = document.querySelectorAll('.content');
+    allContent.forEach(content => {
+        content.classList.remove('active');
+    });
+
+    const selectedContent = document.getElementById(`${contentId}-content`);
+    selectedContent.classList.add('active');
+}
