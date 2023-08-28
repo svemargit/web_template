@@ -1,28 +1,45 @@
-let menuToggle = document.querySelector('.toggle');
-let navigation = document.querySelector('.navigation');
+// ---------vertical-menu with-inner-menu-active-animation-----------
 
-menuToggle.onclick = function(){
-    menuToggle.classList.toggle('active');
-    navigation.classList.toggle('active');
-}
-
-let list = document.querySelectorAll('.list');
-for (let i = 0; i < list.length; i++) {
-    list[i].onclick = function(){
-        let j = 0;
-        while(j < list.length){
-            list[j++].className = 'list';
-        }
-        list[i].className = 'list active';
-    }
-}
-
-function showContent(contentId) {
-    const allContent = document.querySelectorAll('.content');
-    allContent.forEach(content => {
-        content.classList.remove('active');
+var tabsVerticalInner = $('#accordian');
+var selectorVerticalInner = $('#accordian').find('li').length;
+var activeItemVerticalInner = tabsVerticalInner.find('.active');
+var activeWidthVerticalHeight = activeItemVerticalInner.innerHeight();
+var activeWidthVerticalWidth = activeItemVerticalInner.innerWidth();
+var itemPosVerticalTop = activeItemVerticalInner.position();
+var itemPosVerticalLeft = activeItemVerticalInner.position();
+$(".selector-active").css({
+    "top":itemPosVerticalTop.top + "px",
+    "left":itemPosVerticalLeft.left + "px",
+    "height": activeWidthVerticalHeight + "px",
+    "width": activeWidthVerticalWidth + "px"
+});
+$("#accordian").on("click","li",function(e){
+    $('#accordian ul li').removeClass("active");
+    $(this).addClass('active');
+    var activeWidthVerticalHeight = $(this).innerHeight();
+    var activeWidthVerticalWidth = $(this).innerWidth();
+    var itemPosVerticalTop = $(this).position();
+    var itemPosVerticalLeft = $(this).position();
+    $(".selector-active").css({
+        "top":itemPosVerticalTop.top + "px",
+        "left":itemPosVerticalLeft.left + "px",
+        "height": activeWidthVerticalHeight + "px",
+        "width": activeWidthVerticalWidth + "px"
     });
+});
 
-    const selectedContent = document.getElementById(`${contentId}-content`);
-    selectedContent.classList.add('active');
-}
+
+// --------------add active class-on another-page move----------
+jQuery(document).ready(function($){
+    // Get current path and find target link
+    var path = window.location.pathname.split("/").pop();
+
+    // Account for home page with empty path
+    if ( path == '' ) {
+        path = 'index.html';
+    }
+
+    var target = $('#accordian ul li a[href="'+path+'"]');
+    // Add active class to target link
+    target.parent().addClass('active');
+});

@@ -1,0 +1,103 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100vh;
+}
+
+body {
+    font-family: 'Satoshi variable', sans-serif;
+    display: grid;
+    place-items: center;
+    background-color: #000;
+}
+
+.card-group {
+    max-width: 1260px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 50px;
+}
+
+.card-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-basis: calc(100% - 32px); /* Adjust as needed based on your gap and padding */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 300px;
+    background-image: linear-gradient(85deg, #434343, #262626);
+    padding: 32px;
+    box-shadow: -5px 0 16px 32px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    transition: transform 250ms;
+}
+
+.card-row .card {
+    transition: transform 0.25s; /* Apply a transition for smooth animations */
+}
+
+.card-row:hover .card:hover {
+    animation: hoverAnimation 0.5s forwards; /* Apply the animation on hover */
+}
+
+@keyframes hoverAnimation {
+    0% {
+        transform: translate(0, 0) rotate(0) scale(1); /* Initial state */
+    }
+    50% {
+        transform: translate(calc(-50% + 150px), calc(-50% + 150px)) rotate(3deg) scale(1.2); /* Middle state */
+    }
+    100% {
+        transform: translate(-8px, -16px) scale(1.2); /* Final state */
+    }
+}
+
+.card-date {
+    display: block;
+    color: #777777;
+    margin-bottom: 3px;
+    font-size: 14px;
+}
+
+.card-date strong {
+    color: #d4d4d4;
+}
+
+.card-title {
+    font-size: 26px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.card-footer {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    color: #fff;
+}
+
+.card-image {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.card-image img {
+    display: block;
+    width: 100%;
+}
