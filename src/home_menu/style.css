@@ -1,59 +1,100 @@
 :root {
-    --background: #faf0e6;
-    --menu-background: #9d6037;
-    --white: #faf0e6;
+    --DeepSkyBlue: #00bfff;
     --active: #a2a4a0;
+    --black: #000000;
+    --background: #5f5f5f;
+    --menu-background: #2f2f2f;
+    --white: #fff;
     --close: #FF0000;
-    --black: #36454F;
+}
+
+.light-mode {
+    --background: #f5f5f5;
+    --menu-background: #e0e0e0;
+    --white: #000;
+    --black: #fff;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', Arial, Helvetica, serif;
+    font-family: 'Montserrat', Arial, Helvetica;
     font-weight: 600;
 }
 
 body {
     display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    background-color: var(--background) !important;
+    background: var(--background);
 }
 
-.container{
-    background-color: var(--background);
+/* Style for the toggle switch */
+.mode-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center horizontally */
+    width: 60px; /* Set the width for the switch */
+    height: 30px; /* Set the height for the switch */
+    background-color: var(--menu-background);
+    border-radius: 30px; /* Make it round to resemble a switch */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: fixed; /* Keep it fixed */
+    top: 20px; /* Adjust the top position as needed */
+    right: 50%; /* Center horizontally */
+    transform: translateX(50%); /* Center horizontally */
+    z-index: 999; /* Ensure it's on top */
+}
+
+/* Style for the slider */
+.toggle-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%; /* Initial position for the switch */
+    height: 100%;
+    background-color: var(--active);
+    border-radius: 50%; /* Make it round to resemble the slider */
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+
+/* Style for icons */
+.light-icon,
+.dark-icon {
+    font-size: 18px;
+    padding: 5px;
+    color: var(--white);
 }
 
 .display {
-    background: var(--background);
-    width: 13em;
-    position: fixed;
-    z-index: 10;
+    background: var(--black);
+    height: 100%;
 }
-.bounced {
-    position: relative;
-    left: 3em;
-}
+
 .navigation {
     position: fixed;
     top: 0;
     bottom: 0;
+    left: 0px;
     width: 70px;
+    border-radius: 0 25px 25px 0;
     box-sizing: initial;
-    border: var(--menu-background);
     background: var(--menu-background);
-    transition: width 0.5s;
+    transition: width .5s;
     overflow-x: hidden;
+    z-index: 999;
 }
 
-
 .navigation.active {
-    width: 11em;
+    width: 200px;
 }
 
 .navigation ul {
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -138,6 +179,9 @@ body {
     height: 60px;
     line-height: 70px;
     text-align: center;
+}
+
+.icon ion-icon {
     font-size: 1.5em;
 }
 
@@ -153,8 +197,11 @@ body {
 .toggle {
     position: fixed;
     top: 40px;
-    width: 4em;
+    right: 0px;
+    width: 50px;
+    height: 50px;
     background: var(--menu-background);
+    border-radius: 10px;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -165,24 +212,20 @@ body {
     background: var(--close);
 }
 
-.toggle span {
+.toggle ion-icon {
     position: absolute;
     color: var(--white);
     font-size: 34px;
     display: none;
 }
 
-.toggle span.open,
-.toggle.active span.close {
+.toggle ion-icon.open,
+.toggle.active ion-icon.close {
     display: block;
 }
 
-.toggle.active span.close {
-    background-color: var(--close);
-}
-
-.toggle span.close,
-.toggle.active span.open {
+.toggle ion-icon.close,
+.toggle.active ion-icon.open {
     display: none;
 }
 

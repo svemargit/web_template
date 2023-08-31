@@ -7,12 +7,18 @@
     <link rel="stylesheet" href="../home_menu/style.css">
     <link rel="stylesheet" href="../input_animation/style.css">
     <link rel="stylesheet" href="../parallax/style.css">
+    <link rel="stylesheet" href="../cards/style.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
 <section id="menu">
+    <div class="mode-toggle">
+        <ion-icon name="sunny-outline" class="light-icon"></ion-icon>
+        <ion-icon name="moon-outline" class="dark-icon"></ion-icon>
+        <div class="toggle-slider"></div>
+    </div>
     <div class="display">
         <div class="navigation">
             <ul>
@@ -28,6 +34,14 @@
                     <b></b>
                     <b></b>
                     <a href="#" onclick="showContent('form')">
+                        <span class="bi bi-input-cursor-text icon"></span>
+                        <span class="title">Form</span>
+                    </a>
+                </li>
+                <li class="list" id="cards-list">
+                    <b></b>
+                    <b></b>
+                    <a href="#" onclick="showContent('cards')">
                         <span class="bi bi-input-cursor-text icon"></span>
                         <span class="title">Form</span>
                     </a>
@@ -96,9 +110,98 @@
         </div>
     </div>
 </section>
+<section class="container m-4 content" id="cards-content">
 
+    <div class="card-group">
+        <div class="card-row">
+            <article class="card">
+                <header class="card-header">
+          <span class="card-date">
+            <strong> Published </strong>
+            on Aug 21, 2023
+          </span>
+                    <h3 class="card-title">
+                        <a href="#" class="card-title">Should you use flexbox or grid?</a>
+                    </h3>
+                </header>
+            </article>
+            <article class="card">
+                <header class="card-header">
+          <span class="card-date">
+            <strong> Published </strong>
+            on Aug 21, 2023
+          </span>
+                    <h3 class="card-title">
+                        <a href="#" class="card-title">Should you use flexbox or grid?</a>
+                    </h3>
+                </header>
+            </article>
+            <article class="card">
+                <header class="card-header">
+          <span class="card-date">
+            <strong> Published </strong>
+            on Aug 21, 2023
+          </span>
+                    <h3 class="card-title">
+                        <a href="#" class="card-title">Should you use flexbox or grid?</a>
+                    </h3>
+                </header>
+            </article>
+            <article class="card">
+                <header class="card-header">
+          <span class="card-date">
+            <strong> Published </strong>
+            on Aug 17, 2023
+          </span>
+                    <h3 class="card-title">
+                        <a href="#" class="card-title">Sample title</a>
+                    </h3>
+                </header>
+            </article>
+        </div>
+        <div class="card-row">
+            <article class="card">
+                <header class="card-header">
+          <span class="card-date">
+            <strong> Published </strong>
+            on Aug 21, 2023
+          </span>
+                    <h3 class="card-title">
+                        <a href="#" class="card-title">Should you use flexbox or grid?</a>
+                    </h3>
+                </header>
+            </article>
+            <article class="card">
+                <header class="card-header">
+          <span class="card-date">
+            <strong> Published </strong>
+            on Aug 18, 2023
+          </span>
+                    <h3 class="card-title">
+                        <a href="#" class="card-title">Sample title</a>
+                    </h3>
+                </header>
+            </article>
+            <article class="card">
+                <header class="card-header">
+          <span class="card-date">
+            <strong> Published </strong>
+            on Aug 17, 2023
+          </span>
+                    <h3 class="card-title">
+                        <a href="#" class="card-title">Sample title</a>
+                    </h3>
+                </header>
+            </article>
+        </div>
+    </div>
+</section>
 <script src="../home_menu/script.js"></script>
 <script src="../parallax/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

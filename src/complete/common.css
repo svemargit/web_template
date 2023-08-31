@@ -1,0 +1,25 @@
+:root {
+    --DeepSkyBlue: #00bfff;
+    --active: #a2a4a0;
+    --black: #36454F;
+    --background: #5f5f5f;
+    --menu-background: #2f2f2f;
+    --white: #fff;
+    --close: #FF0000;
+}
+
+/* Light Mode */
+.light-mode {
+    --background: #f5f5f5;
+    --menu-background: #e0e0e0;
+    --white: #000;
+}
+
+body {
+    height: 100vh;
+    overflow-x: hidden;
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

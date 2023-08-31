@@ -1,45 +1,68 @@
-// ---------vertical-menu with-inner-menu-active-animation-----------
+let menuToggle = document.querySelector('.toggle');
+let navigation = document.querySelector('.navigation');
+let modeToggle = document.querySelector('.mode-toggle');
+let toggleSlider = document.querySelector('.toggle-slider');
 
-var tabsVerticalInner = $('#accordian');
-var selectorVerticalInner = $('#accordian').find('li').length;
-var activeItemVerticalInner = tabsVerticalInner.find('.active');
-var activeWidthVerticalHeight = activeItemVerticalInner.innerHeight();
-var activeWidthVerticalWidth = activeItemVerticalInner.innerWidth();
-var itemPosVerticalTop = activeItemVerticalInner.position();
-var itemPosVerticalLeft = activeItemVerticalInner.position();
-$(".selector-active").css({
-    "top":itemPosVerticalTop.top + "px",
-    "left":itemPosVerticalLeft.left + "px",
-    "height": activeWidthVerticalHeight + "px",
-    "width": activeWidthVerticalWidth + "px"
-});
-$("#accordian").on("click","li",function(e){
-    $('#accordian ul li').removeClass("active");
-    $(this).addClass('active');
-    var activeWidthVerticalHeight = $(this).innerHeight();
-    var activeWidthVerticalWidth = $(this).innerWidth();
-    var itemPosVerticalTop = $(this).position();
-    var itemPosVerticalLeft = $(this).position();
-    $(".selector-active").css({
-        "top":itemPosVerticalTop.top + "px",
-        "left":itemPosVerticalLeft.left + "px",
-        "height": activeWidthVerticalHeight + "px",
-        "width": activeWidthVerticalWidth + "px"
-    });
-});
+// Check and set initial state of the navbar and toggle based on localStorage
+window.addEventListener('DOMContentLoaded', () => {
+    const isNavbarOpen = localStorage.getItem('navbarOpen') === 'true';
+    const isToggleOpen = localStorage.getItem('toggleOpen') === 'true';
 
-
-// --------------add active class-on another-page move----------
-jQuery(document).ready(function($){
-    // Get current path and find target link
-    var path = window.location.pathname.split("/").pop();
-
-    // Account for home page with empty path
-    if ( path == '' ) {
-        path = 'index.html';
+    if (isNavbarOpen) {
+        navigation.classList.add('active');
     }
 
-    var target = $('#accordian ul li a[href="'+path+'"]');
-    // Add active class to target link
-    target.parent().addClass('active');
+    if (isToggleOpen) {
+        menuToggle.classList.add('active');
+    }
 });
+
+menuToggle.onclick = function() {
+    menuToggle.classList.toggle('active');
+    navigation.classList.toggle('active');
+
+    // Store the state of the toggle in localStorage
+    localStorage.setItem('navbarOpen', navigation.classList.contains('active'));
+}
+
+modeToggle.onclick = function() {
+    document.body.classList.toggle('light-mode');
+    modeToggle.querySelector('.light-icon').classList.toggle('active-icon');
+    modeToggle.querySelector('.dark-icon').classList.toggle('active-icon');
+    toggleSlider.style.transform = document.body.classList.contains('light-mode') ? 'translateX(100%)' : 'translateX(0)';
+
+    localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+}
+
+// Check and set initial theme based on localStorage when the page loads
+window.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+        toggleSlider.style.transform = 'translateX(100%)';
+    } else if (savedTheme === 'dark') {
+        document.body.classList.remove('light-mode');
+        toggleSlider.style.transform = 'translateX(0)';
+    }
+});
+
+let list = document.querySelectorAll('.list');
+for (let i = 0; i < list.length; i++) {
+    list[i].onclick = function() {
+        let j = 0;
+        while (j < list.length) {
+            list[j++].className = 'list';
+        }
+        list[i].className = 'list active';
+    }
+}
+function showContent(contentId) {
+    console.log('showContent called with contentId:', contentId);
+
+    // Hide all content sections
+    $('.content').removeClass('active');
+
+    // Show the selected content section
+    $('#' + contentId + '-content').addClass('active');
+}
+
