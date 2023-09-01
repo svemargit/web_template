@@ -13,7 +13,7 @@
 }
 
 #parallax-content .brand span {
-    color: var(--purple);
+    color: var(--color0);
 }
 
 #parallax-content .menu {
@@ -95,11 +95,11 @@
 .scuba h2 {
     padding: 80px 20px 0 60px;
     font-size: 3rem;
-    color: var(--purple);
+    color: var(--color0);
 }
 
 .scuba p {
     padding: 40px 60px;
-    color: var(--purple);
+    color: var(--color0);
 }
 

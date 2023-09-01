@@ -1,16 +1,19 @@
 :root {
-    --purple: #3E001F;
+    --color0: #3E001F;
     --color1: #65451F;
     --color2: #C8AE7D;
     --color3: #EAC696;
     --close: red;
+    --white: white;
 }
 
 /* Light Mode */
 .light-mode {
+    --color0: #3944BC;
     --color1: #94A684;
     --color2: #AEC3AE;
     --color3: #E4E4D0;
+    --white: black;
 }
 
 body {

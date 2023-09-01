@@ -4,7 +4,7 @@
 
 #form-content .input-group_input {
     font: inherit;
-    color: var(--purple);
+    color: var(--color0);
     background-color: transparent;
     transition: outline-color 500ms, cursor 500ms;
     cursor: text;
@@ -12,7 +12,7 @@
 
 #form-content .input-group_input:focus,
 #form-content .input-group_input:valid {
-    outline-color: var(--purple);;
+    outline-color: var(--color0);;
 }
 
 #form-content .input-group_input:hover {
@@ -24,7 +24,7 @@
     top: 0;
     left: 0;
     transform: translate(10px, 10px);
-    color: var(--purple);
+    color: var(--color0);
     transition: transform 500ms, background-color 500ms, cursor 500ms;
     cursor: pointer;
     background-color: var(--color2);
@@ -38,7 +38,7 @@
 #form-content .input-group_input:focus + .input-group_label,
 #form-content .input-group_input:valid + .input-group_label {
     transform: translate(0px, -22px) scale(1);
-    color: var(--purple);
+    color: var(--color0);
     background-color: transparent;
     padding-right: 0px;
     z-index: 5;

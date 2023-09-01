@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-menuToggle.onclick = function() {
+menuToggle.onclick = function () {
     menuToggle.classList.toggle('active');
     navigation.classList.toggle('active');
 
@@ -25,7 +25,7 @@ menuToggle.onclick = function() {
     localStorage.setItem('navbarOpen', navigation.classList.contains('active'));
 }
 
-modeToggle.onclick = function() {
+modeToggle.onclick = function () {
     document.body.classList.toggle('light-mode');
     modeToggle.querySelector('.light-icon').classList.toggle('active-icon');
     modeToggle.querySelector('.dark-icon').classList.toggle('active-icon');
@@ -48,7 +48,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 let list = document.querySelectorAll('.list');
 for (let i = 0; i < list.length; i++) {
-    list[i].onclick = function() {
+    list[i].onclick = function () {
         let j = 0;
         while (j < list.length) {
             list[j++].className = 'list';
@@ -56,6 +56,7 @@ for (let i = 0; i < list.length; i++) {
         list[i].className = 'list active';
     }
 }
+
 function showContent(contentId) {
     console.log('showContent called with contentId:', contentId);
 
