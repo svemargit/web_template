@@ -5,51 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Menu</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../complete/common.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
 </head>
 <body>
-<div class="mode-toggle">
-    <ion-icon name="sunny-outline" class="light-icon"></ion-icon>
-    <ion-icon name="moon-outline" class="dark-icon"></ion-icon>
-    <div class="toggle-slider"></div>
-</div>
-<div class="display">
-    <div class="navigation">
-        <ul>
-            <li class="list active blue" id="parallex-list">
-                <b></b>
-                <b></b>
-                <a href="#" onclick="showContent('parallex')">
-                    <span class="bi bi-arrows-expand icon"></span>
-                    <span class="title">Parallex</span>
-                </a>
-            </li>
-            <li class="list" id="profile-list">
-                <b></b>
-                <b></b>
-                <a href="#" onclick="showContent('form')">
-                    <span class="bi bi-input-cursor-text icon"></span>
-                    <span class="title">Form</span>
-                </a>
-            </li>
-            <li class="list" id="cards-list">
-                <b></b>
-                <b></b>
-                <a href="#" onclick="showContent('cards')">
-                    <span class="bi bi-input-cursor-text icon"></span>
-                    <span class="title">Form</span>
-                </a>
-            </li>
-        </ul>
+<section id="menu">
+    <div class="mode-toggle">
+        <ion-icon name="sunny-outline" class="light-icon"></ion-icon>
+        <ion-icon name="moon-outline" class="dark-icon"></ion-icon>
+        <div class="toggle-slider"></div>
     </div>
-    <div class="toggle">
-        <span name="grid-outline" class="open bi bi-list"></span>
-        <span name="close-circle-outline" class="close bi bi-x"></span>
+    <div class="display">
+        <div class="navigation">
+            <ul>
+                <li class="list active blue" id="parallex-list">
+                    <b></b>
+                    <b></b>
+                    <a href="#" onclick="showContent('parallex')">
+                        <span class="bi bi-arrows-expand icon"></span>
+                        <span class="title">Parallex</span>
+                    </a>
+                </li>
+                <li class="list" id="profile-list">
+                    <b></b>
+                    <b></b>
+                    <a href="#" onclick="showContent('form')">
+                        <span class="bi bi-input-cursor-text icon"></span>
+                        <span class="title">Form</span>
+                    </a>
+                </li>
+                <li class="list" id="cards-list">
+                    <b></b>
+                    <b></b>
+                    <a href="#" onclick="showContent('cards')">
+                        <span class="bi bi-input-cursor-text icon"></span>
+                        <span class="title">Form</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="toggle">
+            <span name="grid-outline" class="open bi bi-list"></span>
+            <span name="close-circle-outline" class="close bi bi-x"></span>
+        </div>
     </div>
-</div>
-
+</section>
 
 <section class="content active" id="form">
     <div>

@@ -66,3 +66,26 @@ function showContent(contentId) {
     $('#' + contentId + '-content').addClass('active');
 }
 
+// Get references to the open and close spans
+const openSpan = document.querySelector('.open');
+const closeSpan = document.querySelector('.close');
+
+// Initialize a variable to track the current state
+let isOpen = true;
+closeSpan.style.display = 'none';
+
+// Add a click event listener to the toggle container
+document.querySelector('.toggle').addEventListener('click', function () {
+    if (isOpen) {
+        // If open span is visible, hide it and show close span
+        openSpan.style.display = 'none';
+        closeSpan.style.display = 'inline';
+    } else {
+        // If close span is visible, hide it and show open span
+        openSpan.style.display = 'inline';
+        closeSpan.style.display = 'none';
+    }
+
+    // Toggle the state
+    isOpen = !isOpen;
+});

@@ -1,25 +1,28 @@
 :root {
-    --DeepSkyBlue: #00bfff;
-    --active: #a2a4a0;
-    --black: #36454F;
-    --background: #5f5f5f;
-    --menu-background: #2f2f2f;
-    --white: #fff;
-    --close: #FF0000;
+    --purple: #3E001F;
+    --color1: #65451F;
+    --color2: #C8AE7D;
+    --color3: #EAC696;
+    --close: red;
 }
 
 /* Light Mode */
 .light-mode {
-    --background: #f5f5f5;
-    --menu-background: #e0e0e0;
-    --white: #000;
+    --color1: #94A684;
+    --color2: #AEC3AE;
+    --color3: #E4E4D0;
 }
 
 body {
-    height: 100vh;
-    overflow-x: hidden;
-    background: var(--background);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: var(--color2) !important;
 }
+
+section.content {
+    margin-left: 100px !important;
+}
+
+#parallax-content {
+    background-color: initial;
+    margin-left: 0 !important;
+}
+

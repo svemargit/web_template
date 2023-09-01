@@ -1,31 +1,22 @@
-:root {
-    --DeepSkyBlue: #00bfff;
-    --active: #a2a4a0;
-    --black: #36454F;
-    --background: #5f5f5f;
-    --menu-background: #2f2f2f;
-    --white: #fff;
-    --close: #FF0000;
-}
-
-header {
+#parallax-content header {
     position: absolute;
     width: 100%;
     z-index: 1;
 }
 
 
-.brand {
+#parallax-content .brand {
     font-size: 2rem;
-    color: var(--white);
+    color: var(--color3);
     pointer-events: none;
+    z-index: 999;
 }
 
-.brand span {
-    color: var(--DeepSkyBlue);
+#parallax-content .brand span {
+    color: var(--purple);
 }
 
-.menu {
+#parallax-content .menu {
     min-width: 400px;
     display: flex;
     justify-content: space-between;
@@ -34,15 +25,15 @@ header {
 
 .menu a {
     text-decoration: none;
-    color: var(--white);
+    color: var(--color3);
     font-size: 1rem;
-    border: 3px solid var(--white);
+    border: 3px solid var(--color3);
     padding: 6px 6px;
     border-radius: 18px;
 }
 
 .menu a:hover, .menu a.active {
-    background: var(--black);
+    background: var(--color2);
 
 }
 
@@ -58,7 +49,7 @@ header {
 #introOne {
     position: absolute;
     font-size: 5rem;
-    color: var(--white);
+    color: var(--color3);
     z-index: 2;
     top: 200px;
     left: 800px;
@@ -70,7 +61,7 @@ header {
 #introTwo {
     position: absolute;
     font-size: 5rem;
-    color: var(--white);
+    color: var(--color3);
     z-index: 3;
     top: 280px;
     left: 700px;
@@ -101,15 +92,14 @@ header {
     right: 209px;
 }
 
-
 .scuba h2 {
     padding: 80px 20px 0 60px;
     font-size: 3rem;
-    color: var(--DeepSkyBlue);
+    color: var(--purple);
 }
 
 .scuba p {
     padding: 40px 60px;
-    color: var(--white);
+    color: var(--purple);
 }
 
