@@ -1,0 +1,89 @@
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+.services .icon-box {
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+  border-radius: 8px;
+  z-index: 1;
+  max-height: 10em;
+  transition: max-height 5s ease !important;
+}
+
+.services .icon-box::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 20px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.services .icon-box:hover {
+  max-height: none;
+}
+
+.services .icon-box:hover::after {
+  opacity: 0;
+}
+
+.services a{
+  color: black;
+}
+
+.services a:hover{
+  color: white;
+}
+
+.services .icon-box::before {
+  content: "";
+  position: absolute;
+  background: white;
+  right: 0;
+  left: 0;
+  bottom: 100%;
+  top: 0;
+  z-index: -1;
+    transition: all 0.3s;
+}
+
+.services .icon-box:hover::before {
+  background: #f27ea5;
+  bottom: 0;
+  border-radius: 0px;
+  }
+
+.services .icon i {
+  font-size: 48px;
+  line-height: 1;
+  color: #f27ea5;
+  transition: all 0.3s ease-in-out;
+}
+
+.services .title {
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.services .description {
+  font-size: 15px;
+  line-height: 28px;
+  margin-bottom: 0;
+}
+
+.services .icon-box:hover a,
+.services .icon-box:hover .description {
+  color: white;
+}
+
+.services .icon-box:hover .icon i {
+  color: #fff;
+}
