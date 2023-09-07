@@ -1,0 +1,424 @@
+:root {
+  --pink: rgba(242, 126, 164, 1);
+  --pink2: rgba(242, 126, 164, 0.6);
+  --pink3: rgba(242, 126, 164, 0.3);
+  --darkBlue: #2f4d5a;
+  --darkBlue2: #49788c;
+  --white: #fff;
+  --black: #000;
+  --pokus: rgba(0, 255, 255, 0.7);
+  --whiteOpacity8: rgba(255, 255, 255, 0.8);
+  --whiteOpacity9: rgba(255, 255, 255, 0.9);
+  --gray: rgba(255, 255, 255, 0.2);
+}
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: "Open Sans", sans-serif;
+  color: var(--darkBlue);
+}
+
+a {
+  text-decoration: none;
+  color: var(--pink);
+}
+
+a:hover {
+  color: var(--pokus);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Noto Sans", sans-serif;
+}
+
+#main {
+  margin-top: 90px;
+}
+
+.center {
+  justify-content: center;
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background-color: var(--white);
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2, h3 {
+  font-size: 32px;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 30px;
+  color: var(--darkBlue);
+  z-index: 2;
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 122px;
+  height: 66px;
+  z-index: -1;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+/*--------------------------------------------------------------
+# Team todo continue
+--------------------------------------------------------------*/
+.team .member {
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.team .member .pic {
+  overflow: hidden;
+  border-radius: 50%;
+  position: relative;
+  width: 50%; /* You can adjust this percentage to your desired smaller size */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.team .member .member-info {
+  position: absolute;
+  top: 85%;
+  left: 20px;
+  right: 20px;
+  background: #fff;
+  padding: 20px 0;
+  color: #2f4d5a;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  max-height: 95px;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.team .member:hover .member-info {
+  max-height: 300px;
+}
+
+.team .member h4 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #2f4d5a;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.team .member h4::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: #b1cbd7;
+  bottom: 0;
+  left: calc(50% - 25px);
+}
+
+.team .member span {
+  font-style: italic;
+  display: block;
+  font-size: 13px;
+}
+
+.team .member .social {
+  margin-top: 15px;
+}
+
+.team .member .social a {
+  transition: color 0.3s;
+  color: #52869d;
+}
+
+.team .member .social a:hover {
+  color: #f27ea5;
+}
+
+.team .member .social i {
+  font-size: 16px;
+  margin: 0 2px;
+}
+
+@media (max-width: 768px) {
+  .team .member {
+    margin-bottom: 110px;
+  }
+  .team .member .pic {
+    width: 30%; /* You can adjust this percentage to your desired smaller size */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact {
+  padding-bottom: 80px;
+}
+
+.contact .info-box {
+  color: #444444;
+  background: var(--white);
+  text-align: center;
+  box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+  padding: 20px 0 30px 0;
+}
+
+.contact .info-box i {
+  font-size: 32px;
+  color: var(--pink);
+  border-radius: 50%;
+  padding: 8px;
+  border: 2px dotted #f0f7fa;
+}
+
+.contact .info-box h3 {
+  font-size: 20px;
+  color: #777777;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.contact .info-box p {
+  padding: 0;
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.contact .php-email-form {
+  box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+  padding: 30px;
+  background: var(--white);
+}
+
+.contact .php-email-form .error-message,
+.contact .php-email-form .sent-message {
+  display: none;
+  color: var(--pink);
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .error-message br + br {
+  margin-top: 25px;
+}
+
+
+.contact .php-email-form .loading {
+  display: none;
+  background: var(--white);
+  text-align: center;
+  padding: 15px;
+}
+
+.contact .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+
+.contact .php-email-form input,
+.contact .php-email-form select,
+.contact .php-email-form option,
+.contact .php-email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+.contact .php-email-form input::focus,
+.contact .php-email-form select::focus,
+.contact .php-email-form textarea::focus {
+  background-color: var(--pink);
+}
+
+.contact .php-email-form input,
+.contact .php-email-form select {
+  padding: 10px 15px;
+}
+
+.contact .php-email-form textarea {
+  padding: 12px 15px;
+}
+
+.contact .notPink button {
+  background: var(--pink);
+  color: #ffffff;
+  border: 0;
+  padding: 10px 24px;
+  transition: 0.4s;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.contact .php-email-form button[type=submit] {
+  background: var(--pink);
+  border: 0;
+  padding: 10px 24px;
+  color: var(--white);
+  transition: 0.4s;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: #8ec4dd;
+}
+
+/* Custom styles for the select element */
+.contact .custom-select {
+  appearance: none;
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 0.375rem 0.75rem;
+  line-height: 1.5;
+  width: 100%;
+  color: #6e777f; /* Placeholder color */
+}
+
+/* Optional: Adjust the font size to match other inputs */
+.contact .custom-select {
+  font-size: 14px;
+}
+
+.contact .btn-group {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+}
+
+.contact .myButton:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  color: var(--darkBlue); /* Dark blue */
+  border: 1px solid #f4f9fc; /* Light blue */
+  background-color: #f4f9fc;
+}
+
+.contact .one {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  -webkit-transition: all .1s ease-in-out;
+  -ms-transition: all .1s ease-in-out;
+  z-index: 10;
+}
+
+.contact .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10; /* Use a sufficiently high value to place it above other elements */
+}
+
+.contact .overlay2 {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10; /* Use a sufficiently high value to place it above other elements */
+}
+
+.contact .middle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  left: -100%; /* Start off hidden to the left */
+  transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
+  -ms-transition: all .5s ease-in-out;
+  z-index: 10; /* Use a sufficiently high value to place it above other elements */
+}
+
+.contact .right {
+  float: right;
+}
+
+.contact .pink {
+  background: #ffffff;
+  color: var(--pink);
+  font-size: 30px;
+  border: 0;
+}
+
+.contact .pink2 {
+  background: #ffffff;
+  color: var(--pink);
+  font-size: 20px;
+  border: 0;
+}
+
+.contact .emailForm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 200px;
+  z-index: 10; /* Use a sufficiently high value to place it above other elements */
+}
+
+
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
