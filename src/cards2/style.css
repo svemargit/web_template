@@ -1,15 +1,15 @@
-a {
-  text-decoration: none;
-  color: #f27ea5;
-}
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
+.services a {
+    text-decoration: none;
+    color: var(--color1);
+}
 .services .icon-box {
   padding: 30px;
   position: relative;
   overflow: hidden;
-  background: #fff;
+  background: var(--color3);
   box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
   border-radius: 8px;
   z-index: 1;
@@ -24,7 +24,7 @@ a {
   right: 0;
   left: 0;
   padding: 20px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--color3));
   pointer-events: none;
   opacity: 1;
   transition: opacity 0.3s ease;
@@ -40,17 +40,17 @@ a {
 }
 
 .services a{
-  color: black;
+  color: var(--black);
 }
 
 .services a:hover{
-  color: white;
+  color: var(--color1);
 }
 
 .services .icon-box::before {
   content: "";
   position: absolute;
-  background: white;
+  background: var(--color1);
   right: 0;
   left: 0;
   bottom: 100%;
@@ -60,7 +60,7 @@ a {
 }
 
 .services .icon-box:hover::before {
-  background: #f27ea5;
+  background: var(--color1);
   bottom: 0;
   border-radius: 0px;
   }
@@ -68,7 +68,7 @@ a {
 .services .icon i {
   font-size: 48px;
   line-height: 1;
-  color: #f27ea5;
+  color: var(--color1);
   transition: all 0.3s ease-in-out;
 }
 
@@ -84,10 +84,8 @@ a {
 }
 
 .services .icon-box:hover a,
-.services .icon-box:hover .description {
-  color: white;
-}
-
+.services .icon-box:hover .description,
+.services .icon-box:hover .title,
 .services .icon-box:hover .icon i {
-  color: #fff;
+  color: var(--white);
 }

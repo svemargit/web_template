@@ -5,6 +5,7 @@
     --color3: #EAC696;
     --close: red;
     --white: white;
+    --black: black;
 }
 
 /* Light Mode */
@@ -14,6 +15,7 @@
     --color2: #AEC3AE;
     --color3: #E4E4D0;
     --white: black;
+    --black: white;
 }
 
 body {
